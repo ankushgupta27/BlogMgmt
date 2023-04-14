@@ -1,0 +1,12 @@
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\bin\Debug\net7.0\BlogMgmt.Models.deps.json
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\bin\Debug\net7.0\BlogMgmt.Models.dll
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\bin\Debug\net7.0\BlogMgmt.Models.pdb
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\obj\Debug\net7.0\BlogMgmt.Models.csproj.AssemblyReference.cache
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\obj\Debug\net7.0\BlogMgmt.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\obj\Debug\net7.0\BlogMgmt.Models.AssemblyInfoInputs.cache
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\obj\Debug\net7.0\BlogMgmt.Models.AssemblyInfo.cs
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\obj\Debug\net7.0\BlogMgmt.Models.csproj.CoreCompileInputs.cache
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\obj\Debug\net7.0\BlogMgmt.Models.dll
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\obj\Debug\net7.0\refint\BlogMgmt.Models.dll
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\obj\Debug\net7.0\BlogMgmt.Models.pdb
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Models\obj\Debug\net7.0\ref\BlogMgmt.Models.dll

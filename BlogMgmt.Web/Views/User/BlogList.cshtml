@@ -1,0 +1,164 @@
+@using BlogMgmt.Models.ViewModels;
+
+@model IEnumerable<BlogMgmt.Data.Entities.Blog>
+@{
+  Pager pager=new Pager();
+   int pageNo=0;
+   if(ViewBag.Pager!=null){
+    pager=ViewBag.Pager;
+    pageNo=pager.CurrentPage;
+   }
+    ViewData["Title"] = "Blog List";
+    Layout="_Layout4";
+}
+
+<style>
+    body {
+  padding: 2rem 0rem;
+  background-color: lightgray;
+}
+
+.card-img {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.card-title {
+  margin-bottom: 0.3rem;
+}
+.card-body:hover{
+    background-color: gray;
+    scale: 1.05;
+}
+
+.cat {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.fa-users {
+  margin-left: 1rem;
+}
+
+.card-footer {
+  font-size: 0.8rem;
+}
+table,td{
+    border:1px solid black;
+}
+th{
+    background-color: black;
+    color: white;
+    border:1px solid white;
+    text-align: center;
+}
+</style>
+<div>
+    <h1 style="text-align:center;" class="mb-5">BLOGS</h1>
+  
+</div>
+@* <div class="container">
+  <div class="row row-cols-1 g-3 ml-5 mr-5 mt-5 mb-5">
+    @foreach (var prod in Model)
+        {
+         <div class="col">
+      <div class="card">
+       
+        <div class="card-body">
+          <h4 class="card-title"><b>Title :</b>  @prod.Title</h4>
+          <p class="text-muted cat">
+            <i class="card-text"></i><b>Category :</b> @prod.Category.Name
+          </p>
+          <p class="card-text"><b>Description :</b> @prod.Description</p>
+          <div class="d-flex justify-content-around">
+        <a class="btn bg-primary text-light"  asp-controller="User" asp-action="AddBlog" asp-route-id="@prod.Id">Edit</a>
+                    @* <a asp-area="" asp-controller="User" asp-action="AddBlog"
+                    asp-route-id="@prod.Id">Delete</a> 
+                   
+  @Html.ActionLink("Delete","DeleteBlog","User",new{prod.Id},new{@class="btn btn-primary",onclick="return confirm('Do you really want to delete this record')"})
+          </div>
+        
+        </div>
+      </div>
+    </div> *@
+    <table border="1" style="background-color: white;">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Description</th>  
+            <th>Edit</th> 
+            <th>Delete</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var prod in Model)
+        {
+            <tr>
+                <td>
+                      <a asp-controller="User" asp-action="ViewBlog" asp-route-id="@prod.Id">@prod.Title</a> 
+                    @* @prod.Title *@
+                </td>
+                 <td>
+                    @prod.Category.Name
+                </td>
+                <td>
+                  @Html.Raw(prod.Description)
+                  
+                </td>
+                <td>
+                    <a class="btn bg-primary text-light"  asp-controller="User" asp-action="AddBlog" asp-route-id="@prod.Id">Edit</a>
+                    
+                </td>
+                <td>
+                 
+                  @if(prod.CreatedBy==Convert.ToInt32(User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value))
+             @Html.ActionLink("Delete","DeleteBlog","User",new{prod.Id},new{@class="btn btn-primary",onclick="return confirm('Do you really want to delete this record')"})
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table> 
+
+<div style="display:flex;justify-content:center;">
+ <a asp-action="AddBlog" asp-controller="User"><button class="btn btn-primary m-3">Add Blog</button></a>
+</div>
+    
+    
+        
+    
+   
+  </div>
+</div>  
+
+<div class="container">
+    @if(pager.TotalPages > 0){
+        <ul class="pagination justify-content-end">
+          @if(pager.CurrentPage>1){
+            <li class="page-item">
+                <a class="page-link" asp-controller="User" asp-action="BlogList" asp-route-pg="1">First</a>
+                </li>
+          <li>
+            <a class="page-link" asp-controller="User" asp-action="BlogList" asp-route-pg="@(pager.CurrentPage-1)">Previous</a>
+          </li>
+          }
+            @for(var pge=pager.StartPage;pge<=pager.EndPage;pge++){
+                <li class="page-item @(pge == pager.CurrentPage ? "active" : "")">
+                <a class="page-link" asp-controller="User" asp-action="BlogList" asp-route-pg="@pge">@pge</a>
+                </li>
+            }
+            @if(pager.CurrentPage<pager.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-controller="User" asp-action="BlogList" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" asp-controller="User" asp-action="BlogList" asp-route-pg="@(pager.TotalPages)">Last</a>
+                </li>
+            }
+        </ul>
+    }
+</div> 

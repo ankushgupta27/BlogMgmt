@@ -1,0 +1,17 @@
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\bin\Debug\net7.0\BlogMgmt.Data.deps.json
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\bin\Debug\net7.0\BlogMgmt.Data.dll
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\bin\Debug\net7.0\BlogMgmt.Data.pdb
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\bin\Debug\net7.0\BlogMgmt.Models.dll
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\bin\Debug\net7.0\BlogMgmt.Models.pdb
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\BlogMgmt.Data.csproj.AssemblyReference.cache
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\BlogMgmt.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\BlogMgmt.Data.AssemblyInfoInputs.cache
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\BlogMgmt.Data.AssemblyInfo.cs
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\BlogMgmt.Data.csproj.CoreCompileInputs.cache
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\BlogMgmt.Data.csproj.CopyComplete
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\BlogMgmt.Data.dll
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\refint\BlogMgmt.Data.dll
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\BlogMgmt.Data.pdb
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\ref\BlogMgmt.Data.dll
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\bin\Debug\net7.0\BlogMgmt.Data.runtimeconfig.json
+C:\Users\ankush.gupta\BlogMgmt\BlogMgmt.Data\obj\Debug\net7.0\BlogMgmt.Data.genruntimeconfig.cache

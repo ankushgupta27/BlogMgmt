@@ -1,0 +1,125 @@
+@model BlogMgmt.Models.ViewModels.UserViewModel;
+@{
+    ViewData["Title"] = "Registration";
+    Layout="_Layout";
+}
+<style>
+    
+label {
+  font-weight: 600;
+  color: #666;
+}
+body {
+background:#f1f1f1;
+}
+.box8{
+box-shadow: 0px 0px 5px 1px #999;
+margin-top: 20px;
+}
+.mx-t3{
+margin-top: 2rem;
+font-size: 25px;
+}
+</style>
+ 
+
+    
+    @section scripts{
+    <script>
+        var lengthSelect = $('#StateId');
+    $("#CountryId").change(function () {
+    var id = $(this).val();
+    @* alert(id); *@
+    $.get('@Url.Action("GetStates", "User")', { countryId: id }, function (data) {
+        lengthSelect.empty();
+        @* debugger; *@
+        $.each(data, function (index, row) {
+            lengthSelect.append("<option value='" + row.id + "'>" + row.name + "</option>")
+        });
+    });
+})
+   
+    
+        var lengthSelec = $('#CityId');
+    $("#StateId").change(function () {
+    var id = $(this).val();
+    @* alert(id); *@
+    $.get('@Url.Action("GetCities", "User")', { stateId: id }, function (data) {
+        lengthSelec.empty();
+     @* debugger;  *@
+        $.each(data, function (index, row) {
+            lengthSelec.append("<option value='" + row.id + "'>" + row.name + "</option>")
+        });
+    });
+})
+    </script>
+    }
+
+
+
+<div class="container mt-5 ">
+ @using(Html.BeginForm("AddUser","User",FormMethod.Post,new {id="formRegistration",enctype="multipart/form-data"}))
+    {
+    <div class="row jumbotron box8">
+      <div class="col-sm-12 mx-t3 mb-5">
+        <h1 class="text-center text-info">REGISTER</h1>
+      </div>
+      <br>
+      <div class="col-sm-6 form-group mb-3">
+        <label for="FullName">Full Name</label>
+         @Html.TextBoxFor(x => x.FullName, "", new { @class = "form-control", placeholder = "Full Name" })
+       @Html.ValidationMessageFor(x => x.FullName,"",new{@class="text-danger"})
+      </div>
+        <br>
+      <div class="col-sm-6 form-group mb-3">
+        <label for="email">Email</label>
+       @Html.TextBoxFor(x => x.Email, "", new { @class = "form-control", placeholder = "Email" })
+      @Html.ValidationMessageFor(x => x.Email,"",new{@class="text-danger"})
+      </div>
+    
+       <div class="col-sm-6 form-group mb-3">
+        <label for="Country">Country</label>
+        <select asp-for="CountryId" asp-items="@(new SelectList(ViewBag.message,"Id","Name"))" class="form-control custom-select browser-default"></select> 
+        @Html.ValidationMessageFor(x => x.CountryId,"",new{@class="text-danger"})
+      </div>
+     
+      <div class="col-sm-6 form-group mb-3">
+        <label for="State">State</label>
+        @Html.DropDownListFor(x => x.StateId, new List<SelectListItem>(), new { @id="StateId", @class="form-control"})
+            @Html.ValidationMessageFor(x => x.StateId,"",new{@class="text-danger"})
+      </div>
+     
+      <div class="col-sm-6 form-group  mb-3">
+        <label for="Date">City</label>
+       @Html.DropDownListFor(x => x.CityId, new List<SelectListItem>(), new { @id="CityId",@class="form-control"})
+        @Html.ValidationMessageFor(x => x.CityId,"",new{@class="text-danger"})
+      </div>
+      <div class="col-sm-6 form-group  mb-3">
+        <label for="mobileno">MobileNo</label>
+        @Html.TextBoxFor(x => x.MobileNo, "", new { @class = "form-control", placeholder = "MobileNo" })
+   @Html.ValidationMessageFor(x => x.MobileNo,"",new{@class="text-danger"})
+      </div>
+       <div class="col-sm-6 form-group mb-3">
+        <label for="address-1">Password</label>
+         @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Enter your Password" })
+          @Html.ValidationMessageFor(x => x.Password,"",new{@class="text-danger"})
+      </div>
+      <div class="col-sm-6 form-group  mb-3">
+        <label for="pass2">Confirm Password</label>
+         @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control", placeholder = "Enter your Confirm Password"  })
+          @Html.ValidationMessageFor(x => x.ConfirmPassword,"",new{@class="text-danger"})
+      </div>
+
+     <div class="form-group">
+   <span id="spnMessage" class="text-danger">@TempData["Message"]</span>
+   <br />
+<div class="col-md-offset-3 col-md-6 mb-5">
+   <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> Submit</button>
+   <span style="margin-left:8px;"></span>
+   <br>
+</div>
+</div>
+
+    </div>
+    }
+</div>

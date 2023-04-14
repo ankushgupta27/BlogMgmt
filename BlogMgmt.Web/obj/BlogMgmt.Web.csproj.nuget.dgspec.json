@@ -1,0 +1,352 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\BlogMgmt.Web.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Business\\BlogMgmt.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Business\\BlogMgmt.Business.csproj",
+        "projectName": "BlogMgmt.Business",
+        "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Business\\BlogMgmt.Business.csproj",
+        "packagesPath": "C:\\Users\\ankush.gupta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ankush.gupta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\BlogMgmt.Data.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\BlogMgmt.Data.csproj"
+              },
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj"
+              },
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Repository\\BlogMgmt.Repository.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Repository\\BlogMgmt.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\BlogMgmt.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\BlogMgmt.Data.csproj",
+        "projectName": "BlogMgmt.Data",
+        "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\BlogMgmt.Data.csproj",
+        "packagesPath": "C:\\Users\\ankush.gupta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ankush.gupta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj",
+        "projectName": "BlogMgmt.Models",
+        "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj",
+        "packagesPath": "C:\\Users\\ankush.gupta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ankush.gupta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Repository\\BlogMgmt.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Repository\\BlogMgmt.Repository.csproj",
+        "projectName": "BlogMgmt.Repository",
+        "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Repository\\BlogMgmt.Repository.csproj",
+        "packagesPath": "C:\\Users\\ankush.gupta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ankush.gupta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\BlogMgmt.Data.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\BlogMgmt.Data.csproj"
+              },
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\BlogMgmt.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\BlogMgmt.Web.csproj",
+        "projectName": "BlogMgmt.Web",
+        "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\BlogMgmt.Web.csproj",
+        "packagesPath": "C:\\Users\\ankush.gupta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ankush.gupta\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Business\\BlogMgmt.Business.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Business\\BlogMgmt.Business.csproj"
+              },
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\BlogMgmt.Data.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Data\\BlogMgmt.Data.csproj"
+              },
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Models\\BlogMgmt.Models.csproj"
+              },
+              "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Repository\\BlogMgmt.Repository.csproj": {
+                "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Repository\\BlogMgmt.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
