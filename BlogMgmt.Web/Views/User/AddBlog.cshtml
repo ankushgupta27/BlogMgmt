@@ -60,7 +60,7 @@
          <label for="Title" class="col-md-3 control-label"><Title></Title></label>
         <div class="col-md-9">
         @Html.TextBoxFor(x => x.Title, "", new { @class = "form-control", placeholder = "Title" })
-         @Html.ValidationMessageFor(x => x.Title)
+         @Html.ValidationMessageFor(x => x.Title, "",new{@class="text-danger"})
         @Html.HiddenFor(x=>x.Id)
        </div>
        </div>
@@ -75,13 +75,13 @@
 <div class="col-sm-6 form-group mb-3">
         <label for="Category">Category</label>
         <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.message,"Id","Name"))" class="form-control custom-select browser-default"></select> 
-        @Html.ValidationMessageFor(x => x.CategoryId)
+        @Html.ValidationMessageFor(x => x.CategoryId, "",new{@class="text-danger"})
       </div>
   <div class="form-group">
          <label for="Description" class="col-md-3 control-label">Description</label>
         <div class="col-md-9">
         @Html.TextAreaFor(x => x.Description,  new { @class = "form-control", placeholder = "Description" ,name="Description"})
-         @Html.ValidationMessageFor(x => x.Description)
+         @Html.ValidationMessageFor(x => x.Description, "",new{@class="text-danger"})
        </div>
        </div>
 <br/>

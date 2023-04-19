@@ -54,13 +54,33 @@ namespace BlogMgmt.Repository
                 return categorylist;
             }
         }
-        public List<Blog> GetBlogList()
+        public List<Blog> GetBlogList(string Sorting_Order, string Search_Data)
         {
             List<Blog> BlogList = new List<Blog>();
             using (var context = new BlogDBContext())
             {
-                BlogList = context.Blogs.Include("Category").ToList();
-                return BlogList;
+                var userAccount = context.Blogs.Include("Category");
+                // return BlogList;
+                // var userAccount = from stu in context.Blogs select stu;
+
+            if (!string.IsNullOrEmpty(Search_Data))
+            {
+                userAccount = userAccount.Where(stu => stu.Title.Contains(Search_Data));
+            }
+            switch (Sorting_Order)
+            {
+                case "Name_Description":
+                    userAccount = userAccount.OrderByDescending(stu => stu.Title);
+                    break;
+               
+                default:
+                    userAccount = userAccount.OrderBy(stu => stu.Title);
+                    break;
+            }
+          
+            return userAccount.ToList();
+
+
 
             }
 

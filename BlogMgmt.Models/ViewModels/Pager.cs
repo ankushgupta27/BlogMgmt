@@ -1,3 +1,4 @@
+using System.Linq;
 namespace BlogMgmt.Models.ViewModels
 {
     public class Pager

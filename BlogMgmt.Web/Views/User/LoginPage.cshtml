@@ -1,7 +1,9 @@
-@model BlogMgmt.Models.ViewModels.UserViewModel;
+@model BlogMgmt.Models.ViewModels.UserLoginViewModel;
 @{
-    Layout=null;
+    @* Layout="_Layout"; *@
+        Layout=null;
 }
+
 <style>
     body {
         background-color: #F2F2F2;
@@ -51,13 +53,18 @@
     }
 </style>
 <h1>Login Page</h1>
-<div>
-    
+<div class="container mt-5 ">
+     
+  
+     
     @using(Html.BeginForm("LoginPage","User",FormMethod.Post)){
         <div class="form-group">
-         <label for="UserName" class="col-md-3 control-label">EmailId</label>
+            <span class="text-danger">@ViewData["Errormsg"]</span>
+            
+         <label for="UserName" class="col-md-3 control-label">Email </label>
         <div class="col-md-9">
         @Html.TextBoxFor(x => x.Email, "", new { @class = "form-control", placeholder = "Enter your Email" })
+          @Html.ValidationMessageFor(x => x.Email,"",new{@class="text-danger"})
        </div>
        </div>
 <br/>
@@ -65,7 +72,8 @@
          <label for="Password" class="col-md-3 control-label">Password</label>
         <div class="col-md-9">
        @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Enter your Password" })
-        <span>@ViewData["Errormsg"]</span>
+        @Html.ValidationMessageFor(x => x.Password,"",new{@class="text-danger"})
+       
        </div>
        </div>
 <br/>

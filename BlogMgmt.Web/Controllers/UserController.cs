@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-
+using System.Linq;
 namespace BlogMgmt.Web.Controllers
 {
 
@@ -42,9 +42,12 @@ namespace BlogMgmt.Web.Controllers
         {
             return View();
         }
-        public IActionResult BlogList(int pg=1)
+        public IActionResult BlogList(string Sorting_Order, string Search_Data, int pg = 1)
         {
-            var BlogDetail = _iBlogBusiness.GetBlogList();
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
+            // ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
+
+         List<Blog> BlogDetail= _iBlogBusiness.GetBlogList(ViewBag.SortingName,Search_Data);
             const int pageSize = 3;
             if (pg < 1)
             {
@@ -56,7 +59,7 @@ namespace BlogMgmt.Web.Controllers
             var data = BlogDetail.Skip(recSkip).Take(pager.Pagesize).ToList();
             this.ViewBag.Pager = pager;
             return View(data);
-            
+
 
         }
         public IActionResult Register()
@@ -105,6 +108,7 @@ namespace BlogMgmt.Web.Controllers
         [HttpPost]
         public IActionResult AddUser(UserViewModel user)
         {
+            
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
             _iUserBusiness.AddUser(user);
             return RedirectToAction(actionName: "LoginPage", controllerName: "User");
@@ -113,52 +117,59 @@ namespace BlogMgmt.Web.Controllers
 
 
         [HttpPost]
-        public IActionResult Loginpage(UserViewModel AccountModel)
+        public IActionResult Loginpage(UserLoginViewModel LoginModel)
         {
+            var AccountModel = new UserViewModel();
+            AccountModel.Email=LoginModel.Email;
+            AccountModel.Password=LoginModel.Password;
             var userDetails = _iUserBusiness.Login(AccountModel);
             if (userDetails != null && BCrypt.Net.BCrypt.Verify(AccountModel.Password, userDetails.Password))
             {
-                var claims = new Claim[] { new Claim(ClaimTypes.Email, userDetails.EmailId), new Claim(ClaimTypes.Role, userDetails.RoleId.ToString()) , new Claim("UserId", userDetails.Id.ToString()) };
+                var claims = new Claim[] { new Claim(ClaimTypes.Email, userDetails.EmailId), new Claim(ClaimTypes.Role, userDetails.RoleId.ToString()), new Claim("UserId", userDetails.Id.ToString()) };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                
-              
-                HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
-                 if(userDetails.RoleId==4){
-                      return RedirectToAction("UserDetails", "User");
-                 }
-                 else if(userDetails.RoleId==5 || userDetails.RoleId==6){
 
-                  return RedirectToAction("BlogList", "User");
+
+                HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
+                if (userDetails.RoleId == 4)
+                {
+                    return RedirectToAction("UserDetails", "User");
+                }
+                else if (userDetails.RoleId == 5 || userDetails.RoleId == 6)
+                {
+
+                    return RedirectToAction("BlogList", "User");
+                }
+                else
+                {
+                    ViewData["Errormsg"] = "Incorrect Email or Password";
+                    return View("LoginPage");
+                }
             }
             else
             {
                 ViewData["Errormsg"] = "Incorrect Email or Password";
                 return View("LoginPage");
-            }}
-            else{
-                 ViewData["Errormsg"] = "Incorrect Email or Password";
-                return View("LoginPage");
             }
         }
 
-            //  if(userDetails.RoleId==4){
-              
-            //     
-            // }
-            // else if(userDetails.RoleId==5 || userDetails.RoleId==6){
+        //  if(userDetails.RoleId==4){
 
-            //      return RedirectToAction("BlogList", "User");
-            // }
-            // else
-            // {
-            //     ViewData["Errormsg"] = "Incorrect Email or Password";
-            //     return View("LoginPage");
-            // }
+        //     
+        // }
+        // else if(userDetails.RoleId==5 || userDetails.RoleId==6){
+
+        //      return RedirectToAction("BlogList", "User");
+        // }
+        // else
+        // {
+        //     ViewData["Errormsg"] = "Incorrect Email or Password";
+        //     return View("LoginPage");
+        // }
         [HttpPost]
         public IActionResult AddBlogDetail(Blog blgDetail)
         {
-            var userId=User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value;
-            blgDetail.CreatedBy=Convert.ToInt32(userId);
+            var userId = User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value;
+            blgDetail.CreatedBy = Convert.ToInt32(userId);
             _iBlogBusiness.AddBlogDetail(blgDetail);
             return RedirectToAction(actionName: "BlogList", controllerName: "User");
             // return View();
@@ -170,7 +181,7 @@ namespace BlogMgmt.Web.Controllers
         {
             return View("Error!");
         }
-          [HttpGet]
+        [HttpGet]
         [Authorize(Roles = "4")]
         public IActionResult UserDetails()
         {
@@ -231,17 +242,17 @@ namespace BlogMgmt.Web.Controllers
             }
             return Json(true);
         }
-        
-    public IActionResult ViewBlog(int Id)
-    {
-        using (var context = new BlogDBContext())
-        {
-            var candidateList = context.Blogs.Include(x=>x.Category).Include(x=>x.UpdatedByNavigation).FirstOrDefault(x=>x.Id==Id);
-            // var candidateList = context.CandidateInformations.Find(Id);
-            return View(candidateList);
-        }
 
-    }
+        public IActionResult ViewBlog(int Id)
+        {
+            using (var context = new BlogDBContext())
+            {
+                var candidateList = context.Blogs.Include(x => x.Category).Include(x => x.UpdatedByNavigation).FirstOrDefault(x => x.Id == Id);
+                // var candidateList = context.CandidateInformations.Find(Id);
+                return View(candidateList);
+            }
+
+        }
 
     }
 }

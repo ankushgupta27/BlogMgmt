@@ -18,13 +18,16 @@ public class UserViewModel
     [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}", ErrorMessage = "Incorrect Email Format")]
     [Remote(action: "VerifyEmail", controller: "User")]
     public string Email { get; set; }
+
     [RegularExpression("^((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[^a-zA-Z0-9])|(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])|(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9])).{8,}$", ErrorMessage = "Passwords must be at least 8 characters and contain at 3 of 4 of the following: upper case (A-Z), lower case (a-z), number (0-9) and special character (e.g. !@#$%^&*)")]
     [Required(ErrorMessage = "Required")]
     public string? Password { get; set; }
+
     [Required(ErrorMessage = "Rrequired")]
     [DataType(DataType.Password)]
     [Compare("Password")]
     public string? ConfirmPassword { get; set; }
+
     [Required(ErrorMessage = "City  is required")]
     public int CityId { get; set; }
     [Required(ErrorMessage = "State is required")]
@@ -45,19 +48,17 @@ public class UserViewModel
 
 
 
-
-    // public string ProfilePic { get; set; }
-
-    // [Required(ErrorMessage = "Confirm Password is required")]
-    // [DataType(DataType.Password)]
-    // [Compare("Password")]
-    // public string ConfirmPassword { get; set; }
-
-    // public virtual ICollection<Cart> Carts { get; } = new List<Cart>();
-    // public virtual ICollection<OrderReceived> OrderReceiveds { get; } = new List<OrderReceived>();
-    // public virtual Role Role { get; set; }
 }
 
-// public enum country
-// { India=1,China=2,Pakistan=3,USA=4
-//  }
+public class UserLoginViewModel
+{
+    [EmailAddress]
+    [Required(ErrorMessage = "Email is required")]
+    [Display(Name = "Email")]
+    [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}", ErrorMessage = "Incorrect Email Format")]
+    
+    public string Email { get; set; }
+
+    [Required(ErrorMessage = "Required")]
+    public string? Password { get; set; }
+}

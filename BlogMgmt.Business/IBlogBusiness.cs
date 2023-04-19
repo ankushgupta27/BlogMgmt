@@ -13,7 +13,7 @@ namespace BlogMgmt.Business
         void AddBlogDetail(Blog Detail);
         
          List<Category> GetCategoryList();
-           List<Blog> GetBlogList();
+           List<Blog> GetBlogList(string Sorting_Order, string Search_Data);
            
          public bool EditBlogDetail(EditBlogModel editBlogModel);
           public AddBlogModel GetBlogById(int id);

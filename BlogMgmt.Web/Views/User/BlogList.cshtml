@@ -1,3 +1,4 @@
+@using System.Linq;
 @using BlogMgmt.Models.ViewModels;
 
 @model IEnumerable<BlogMgmt.Data.Entities.Blog>
@@ -9,7 +10,7 @@
     pageNo=pager.CurrentPage;
    }
     ViewData["Title"] = "Blog List";
-    Layout="_Layout4";
+    Layout="_Layout";
 }
 
 <style>
@@ -81,14 +82,24 @@ th{
         </div>
       </div>
     </div> *@
-    <table border="1" style="background-color: white;">
+       @using (Html.BeginForm())
+{
+    <p>
+        Search Blog: @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+        <input type="submit" value="Find" />
+    </p>
+}
+
+    <table border="1" style="background-color: white;width:100%">
     <thead>
         <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Description</th>  
-            <th>Edit</th> 
-            <th>Delete</th>
+          
+          <th style="width:10%"> @Html.ActionLink("Title", "BlogList", new {Sorting_Order = ViewBag.SortingName })  </th>
+
+            <th style="width:10%">Category</th>
+            <th style="width:60%">Description</th>  
+            <th style="width:10%">Edit</th> 
+            <th style="width:10%">Delete</th>
             
         </tr>
     </thead>
@@ -109,8 +120,9 @@ th{
                   
                 </td>
                 <td>
+                   @if(prod.CreatedBy==Convert.ToInt32(User.Claims.FirstOrDefault(x => x.Type == "UserId")?.Value)){
                     <a class="btn bg-primary text-light"  asp-controller="User" asp-action="AddBlog" asp-route-id="@prod.Id">Edit</a>
-                    
+                   } 
                 </td>
                 <td>
                  
@@ -123,10 +135,10 @@ th{
     </tbody>
 </table> 
 
-<div style="display:flex;justify-content:center;">
+@* <div style="display:flex;justify-content:center;">
  <a asp-action="AddBlog" asp-controller="User"><button class="btn btn-primary m-3">Add Blog</button></a>
 </div>
-    
+     *@
     
         
     

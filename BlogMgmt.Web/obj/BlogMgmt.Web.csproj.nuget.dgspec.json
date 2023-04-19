@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\BlogMgmt.Web.csproj": {}
+    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Web\\BlogMgmt.Web.csproj": {}
   },
   "projects": {
     "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Business\\BlogMgmt.Business.csproj": {
@@ -267,14 +267,14 @@
         }
       }
     },
-    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\BlogMgmt.Web.csproj": {
+    "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Web\\BlogMgmt.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\BlogMgmt.Web.csproj",
+        "projectUniqueName": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Web\\BlogMgmt.Web.csproj",
         "projectName": "BlogMgmt.Web",
-        "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\BlogMgmt.Web.csproj",
+        "projectPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Web\\BlogMgmt.Web.csproj",
         "packagesPath": "C:\\Users\\ankush.gupta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.web\\obj\\",
+        "outputPath": "C:\\Users\\ankush.gupta\\BlogMgmt\\BlogMgmt.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ankush.gupta\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,6 +1,6 @@
 @model IEnumerable<BlogMgmt.Data.Entities.User>
 @{
-    Layout="_Layout4";
+    Layout="_Layout";
     @* Layout="_LayoutMenu"; *@
 }
 <style>
@@ -68,9 +68,7 @@
                 <td>
                     @prod.MobileNo
                 </td>
-               <td>
-                   @Html.ActionLink("Delete","DeleteCandidate","User",new{prod.Id},new{@class="btn btn-danger",onclick="return confirm('Do you really want to delete this record')"})
-                </td>
+             
             </tr>
         }
     </tbody>

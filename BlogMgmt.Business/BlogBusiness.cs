@@ -27,9 +27,9 @@ namespace BlogMgmt.Business
         public List<Category> GetCategoryList(){
             return _iBlogRepository.GetCategoryList();
         }
-         public List<Blog> GetBlogList()
+         public List<Blog> GetBlogList(string Sorting_Order, string Search_Data)
         {
-            return _iBlogRepository.GetBlogList();
+            return _iBlogRepository.GetBlogList(Sorting_Order , Search_Data);
         }
         
          public bool EditBlogDetail(EditBlogModel editBlogModel){
