@@ -18,6 +18,19 @@
   padding: 2rem 0rem;
   background-color: lightgray;
 }
+   a {
+    color: black;
+    display: flex;
+        text-align: center;
+
+}
+.abc a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    margin-left: 43px;
+}
 
 .card-img {
   border-bottom-left-radius: 0px;
@@ -48,40 +61,21 @@ table,td{
     border:1px solid black;
 }
 th{
-    background-color: black;
+    background-color: #4CAF50;
     color: white;
-    border:1px solid white;
+    border: 1px solid black;
     text-align: center;
+}
+.abc{
+  color:white;
+  text-align: center;
 }
 </style>
 <div>
-    <h1 style="text-align:center;" class="mb-5">BLOGS</h1>
+    <h1 style="text-align:center;" class="mb-5 text-success">BLOGS</h1>
   
 </div>
-@* <div class="container">
-  <div class="row row-cols-1 g-3 ml-5 mr-5 mt-5 mb-5">
-    @foreach (var prod in Model)
-        {
-         <div class="col">
-      <div class="card">
-       
-        <div class="card-body">
-          <h4 class="card-title"><b>Title :</b>  @prod.Title</h4>
-          <p class="text-muted cat">
-            <i class="card-text"></i><b>Category :</b> @prod.Category.Name
-          </p>
-          <p class="card-text"><b>Description :</b> @prod.Description</p>
-          <div class="d-flex justify-content-around">
-        <a class="btn bg-primary text-light"  asp-controller="User" asp-action="AddBlog" asp-route-id="@prod.Id">Edit</a>
-                    @* <a asp-area="" asp-controller="User" asp-action="AddBlog"
-                    asp-route-id="@prod.Id">Delete</a> 
-                   
-  @Html.ActionLink("Delete","DeleteBlog","User",new{prod.Id},new{@class="btn btn-primary",onclick="return confirm('Do you really want to delete this record')"})
-          </div>
-        
-        </div>
-      </div>
-    </div> *@
+
        @using (Html.BeginForm())
 {
     <p>
@@ -94,7 +88,7 @@ th{
     <thead>
         <tr>
           
-          <th style="width:10%"> @Html.ActionLink("Title", "BlogList", new {Sorting_Order = ViewBag.SortingName })  </th>
+          <th class="abc" style="width:10%;"> @Html.ActionLink("Title", "BlogList", new {Sorting_Order = ViewBag.SortingName })  </th>
 
             <th style="width:10%">Category</th>
             <th style="width:60%">Description</th>  

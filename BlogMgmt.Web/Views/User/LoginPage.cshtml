@@ -1,7 +1,7 @@
 @model BlogMgmt.Models.ViewModels.UserLoginViewModel;
 @{
-    @* Layout="_Layout"; *@
-        Layout=null;
+    Layout="_Layout";
+        @* Layout=null; *@
 }
 
 <style>
@@ -10,6 +10,8 @@
         font-family: Arial, sans-serif;
     }
     h1 {
+        color: #4CAF50;
+        font-weight: bold;
         text-align: center;
         margin-top: 50px;
     }
@@ -22,7 +24,7 @@
         padding: 30px;
     }
     .form-group {
-        margin-bottom: 20px;
+        margin-bottom: 7px;
     }
     label {
         display: block;
@@ -39,17 +41,17 @@
         width: 100%;
     }
     button[type="submit"] {
-        background-color: #4CAF50;
+        background-color: #4CAF50;;
         border: none;
         color: #fff;
         cursor: pointer;
         font-size: 16px;
         font-weight: bold;
         padding: 10px;
-        width: 100%;
+        width: 75%;
     }
     button[type="submit"]:hover {
-        background-color: #3E8E41;
+        background-color: #4CAF50;;
     }
 </style>
 <h1>Login Page</h1>
@@ -67,7 +69,7 @@
           @Html.ValidationMessageFor(x => x.Email,"",new{@class="text-danger"})
        </div>
        </div>
-<br/>
+
  <div class="form-group">
          <label for="Password" class="col-md-3 control-label">Password</label>
         <div class="col-md-9">
@@ -76,7 +78,7 @@
        
        </div>
        </div>
-<br/>
+
         <div>
             <button type="submit">login</button>
         </div>

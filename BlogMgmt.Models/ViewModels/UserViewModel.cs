@@ -59,6 +59,6 @@ public class UserLoginViewModel
     
     public string Email { get; set; }
 
-    [Required(ErrorMessage = "Required")]
+    [Required(ErrorMessage = "Password is Required")]
     public string? Password { get; set; }
 }

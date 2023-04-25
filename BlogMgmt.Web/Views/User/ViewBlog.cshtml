@@ -51,20 +51,36 @@
   font-size: 16px;
   line-height: 1.5;
 }
+
+@* .container{
+  border:1px solid black;
+} *@
+.table-border{
+  border-bottom: 1px solid black;
+  max-width:100%;
+}
+
+#cont{
+  border:1px solid black;
+  margin-bottom: 4px;
+  
+}
 </style>
 
 
   </div>
-  <div class="container ">
+  <h1 class="mb-4" style="display: flex;justify-content:center;color:rgb(5, 61, 24)">Blog : @Model.Title</h1>
+  <div class="container " id="cont">
      <table class="profile-card__table">
-    <tr>
-      <th>Title</th>
+    <tr class="table-border">
+      <th >Title</th>
       <td>@Model.Title</td>
     </tr>
-    <tr>
+    <tr class="table-border">
       <th>Category</th>
       <td>@Model.Category.Name</td>
     </tr>
+
      <tr>
       <th>Author</th>
       <td>@Model.UpdatedByNavigation.FullName</td>
@@ -72,10 +88,12 @@
    
   </table>
   </div>
- <div class="container">
-    <h3><b>Description:</b></h3>
+ <div class="container" id="cont">
+      </br>
+    <h4><b>Description:</b></h4>
   <div class="profile-card__description">
     @Html.Raw(Model.Description)
+    <br></br>
   </div>
  </div>
      

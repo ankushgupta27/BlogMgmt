@@ -5,7 +5,9 @@
     
 }
 <style>
-    
+.heading{
+  color: #4CAF50;
+}   
 label {
   font-weight: 600;
   color: #666;
@@ -20,6 +22,17 @@ margin-top: 20px;
 .mx-t3{
 margin-top: 2rem;
 font-size: 25px;
+}
+.btn 
+{
+  background-color: #4CAF50;
+  color:white;
+}
+
+.btn:hover
+{
+   background-color: #4CAF50;
+  color:white;
 }
 </style>
  
@@ -63,7 +76,7 @@ font-size: 25px;
     {
     <div class="row jumbotron box8">
       <div class="col-sm-12 mx-t3 mb-5">
-        <h1 class="text-center text-success">REGISTER</h1>
+        <h1 class="text-center heading">REGISTER</h1>
       </div>
       <br>
       <div class="col-sm-6 form-group mb-3">
@@ -97,7 +110,7 @@ font-size: 25px;
       </div>
       <div class="col-sm-6 form-group  mb-3">
         <label for="mobileno">MobileNo</label>
-        @Html.TextBoxFor(x => x.MobileNo, "", new { @class = "form-control", placeholder = "MobileNo" })
+        @Html.TextBoxFor(x => x.MobileNo, "", new { @class = "form-control", placeholder = "Mobile Number" })
    @Html.ValidationMessageFor(x => x.MobileNo,"",new{@class="text-danger"})
       </div>
        <div class="col-sm-6 form-group mb-3">
@@ -115,7 +128,7 @@ font-size: 25px;
    <span id="spnMessage" class="text-danger">@TempData["Message"]</span>
    <br />
 <div class="col-md-offset-3 col-md-6 mb-5">
-   <button id="btn-signup" type="submit" class="btn btn-success"><i class="icon-hand-right"></i> Submit</button>
+   <button id="btn-signup" type="submit" class="btn "><i class="icon-hand-right"></i> Submit</button>
    <span style="margin-left:8px;"></span>
    <br>
 </div>

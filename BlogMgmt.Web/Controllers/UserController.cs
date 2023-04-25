@@ -45,7 +45,6 @@ namespace BlogMgmt.Web.Controllers
         public IActionResult BlogList(string Sorting_Order, string Search_Data, int pg = 1)
         {
             ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
-            // ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
 
          List<Blog> BlogDetail= _iBlogBusiness.GetBlogList(ViewBag.SortingName,Search_Data);
             const int pageSize = 3;

@@ -129,7 +129,9 @@ sub {
 sup {
   top: -.5em;
 }
-
+.abc{
+  color:white;
+}
 a {
   color: #007bff;
   text-decoration: none;
